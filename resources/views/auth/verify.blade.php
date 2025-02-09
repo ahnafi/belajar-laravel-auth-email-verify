@@ -4,16 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verifikasi Email</title>
 </head>
 
 <body>
-    <form action="{{route("logout")}}" method="post">
-        @csrf
-        <button type="submit">logout</button>
-    </form>
-    <h1>hello world</h1>
-
+    <h1>Verifikasi Email Anda</h1>
+    <p>Sebelum melanjutkan, silakan periksa email Anda untuk link verifikasi.</p>
+    <p>Jika Anda tidak menerima email, klik tombol
+    </p>
     @if (Auth::user() && !Auth::user()->hasVerifiedEmail())
         <div>
             Email Anda belum terverifikasi.

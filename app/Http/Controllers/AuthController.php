@@ -30,6 +30,8 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $user->sendEmailVerificationNotification();
+
         Auth::login($user);
 
         return redirect('/');
@@ -60,9 +62,9 @@ class AuthController extends Controller
     }
 
     // Proses logout
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::logout();
-        return redirect()->route("login");
+        return redirect("/login");
     }
 }
