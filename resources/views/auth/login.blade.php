@@ -38,6 +38,9 @@
             <button type="submit">Login</button>
         </div>
     </form>
+
+    <p>lupa password? <a href="{{route("password.request")}}">reset password</a></p>
+
 </body>
 
 </html>
